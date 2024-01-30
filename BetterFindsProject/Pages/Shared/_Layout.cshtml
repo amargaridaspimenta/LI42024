@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .search-input {
+        width: 160px;
+        padding: 8px 20px 8px 45px;
+        border: #fff solid 2px;
+        font-size: 18px;
+        border-radius: 25px;
+        background-position: 2% 50%;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-image: url('search.svg');
+        background-color: transparent;
+        transition: 0.5s all ease-in-out;
+        filter: brightness(170%);
+    }
+
+        .search-input:focus,
+        .search-input:not(:placeholder-shown) {
+            width: 350px;
+            background-color: #fff;
+            filter: brightness(100%);
+        }
+
+    .search-button {
+        background-color: #4CAF50;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: #45a049;
+    }
+
+    .custom-white {
+        color: #ffffff; /* Define a cor do texto como branco */
+    }
+
+    .custom-bold {
+        font-weight: bold; /* Torna o texto em negrito */
+    }
+
+    .custom-large {
+        font-size: 24px; /* Ajuste o tamanho da letra conforme necessário */
+    }
+
+    .custom-rounded {
+        border-radius: 10px; /* Ajuste o valor do raio conforme necessário */
+    }
+
+    .custom-line {
+        display: none;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    /* Adicione isso ao seu estilo existente ou ao seu arquivo CSS */
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; /* Cor da borda quando não estiver em foco */
+        color: #ffffff; /* Cor do texto quando não estiver em foco */
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; /* Cor do texto quando passa o mouse */
+        }
+
+    body {
+        margin: 25px;
+    }
+
+    .icon-button {
+        position: relative;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: #333333;
+        background: #dddddd;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 50px; /* Distância do fundo da página */
+        right: 55px; /* Distância da borda direita da página */
+        z-index: 9999;
+    }
+
+        .icon-button a.material-icons {
+            color: black; 
+        }
+
+        .icon-button:hover {
+            cursor: pointer;
+        }
+
+        .icon-button:active {
+            background: #cccccc;
+        }
+
+    .icon-button__badge {
+        position: absolute;
+        top: -10px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        background: red;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .material-icons-outlined {
+        font-family: 'Material Icons', sans-serif;
+        font-size: 19px;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BetterFinds</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>Icon Button Notification Badge</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BetterFindsProject.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="nav-link" style="color: #ffffff; font-size: 23px; font-weight: bold;" asp-area="" asp-page="/Index">BetterFinds</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff;" asp-area="" asp-page="/CreateAuction">Criar Leilão</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff;" asp-area="" asp-page="/LeiloesExibidos">Leilões</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff;" asp-area="" asp-page="/Perfil">
+                                <span class="material-icons-outlined" style="vertical-align: middle;">account_circle</span>
+                                Perfil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff; " asp-area="" asp-page="/Privacy">Privacidade</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <form method="get" asp-page="/SearchTool">
+                        <input type="search" id="Name" name="Name" class="search-input" placeholder="Pesquisar..." />
+                    </form>
+                </div>
+                <div class="text-center">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn btn-success transparent-btn" asp-page="/Login">Entrar</a>
+                        <a class="btn btn-success transparent-btn" asp-page="/Registo">Registar</a>
+                    }
+                    else
+                    {
+                        <span style="color: white;">Bem-vindo, @User.Identity.Name!</span>
+                        <a class="btn btn-success transparent-btn" asp-page="/Logout">Sair</a>
+
+                        <button type="button" class="icon-button">
+                            <a class="material-icons" href="/Notificacao" width="24" height="24" class="icon-button a.material-icons">
+                                notifications
+                            </a>
+                            <span class="icon-button__badge">1</span>
+                        </button>
+
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

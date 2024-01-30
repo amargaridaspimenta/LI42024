@@ -1,0 +1,152 @@
+﻿@page
+@using BetterFindsProject.Pages
+@model BetterFindsProject.Pages.LeiloesModel
+@{
+    ViewData["Title"] = "Leilões ao vivo!";
+}
+<h1>@ViewData["Title"]</h1>
+    
+<!-- Estilo de botões e de página -->
+<style>
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    .auction {
+        border: 2px solid #ffffff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .auction-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .auction-details {
+        margin-top: 10px;
+    }
+
+    .bid-section {
+        margin-top: 10px;
+    }
+
+    .bid-input {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .bid-button {
+        padding: 5px 10px;
+        background-color: #008000;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; /* Cor da borda da caixa quando não estivermos com o rato em cima*/
+        color: #ffffff; /* Cor do texto quando não estivermos com o rato em cima */
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; /* Cor do texto quando passamos o rato */
+        }
+</style>
+
+<!-- Itera sobre os leilões e obtém os seus valores e informações -->
+@foreach (var auction in Model.Auctions)
+{
+    <div class="auction">
+        <div class="auction-title">@auction.Name</div>
+        <div class="auction-details">
+            <div>Licitação Mínima: @auction.MinimumBid€</div>
+            <div>Licitação Atual: @auction.Price€</div>
+            <div>Descrição: @auction.Description</div>
+            <div>Tempo Restante do Leilão: @auction.EndTime</div>
+        </div>
+
+        @if (auction.IsAuctionEnded) // Exibe mensagem quando leilão termina
+        {
+            <form>
+                <input type="text" class="form-group" placeholder="Leilão Terminado" disabled />
+            </form>
+        }
+        else
+        {
+            // Se cliente estiver autenticado e não for o criador exibe botão de licitar
+            @if ((User.Identity.IsAuthenticated) && (!auction.IsCreator))
+            {
+                <form id="form-licatar-@auction.AuctionId" method="post" asp-page-handler="Licitar">
+                    <input type="hidden" name="AuctionId" value="@auction.AuctionId" />
+                    <input type="number" class="form-group" placeholder="Insira a sua licitação para o leilão" name="Input.Licitacao" />
+                    <button type="submit" class="btn btn-success transparent-btn" id="btn-licatar-@auction.AuctionId" name="action" value="licitar" @(auction.IsAuctionEnded ? "disabled" : "")>
+                        <span>Licitar</span>
+                    </button>
+                </form>
+            }
+            // Se cliente estiver autenticado e for o criado exibe mensagem a dizer que é o seu leilão
+            @if ((User.Identity.IsAuthenticated) && (auction.IsCreator))
+            {
+                <form>
+                    <input type="text" class="form-group" placeholder="Este Leilão é seu" disabled />
+                </form>
+            }
+            // Se cliente não estiver autenticado, exibe um link para a página de login
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <p>Para licitar <a href="/Login" class="login-link">faça Login</a>.</p>
+            }
+        }
+        <!-- Se cliente é vencedor do leilão, exibe o botão comprar -->
+        @if (auction.IsWinner)
+        {
+            <a href="/Compra" class="btn btn-success transparent-btn" id="btn-comprar-@auction.AuctionId">Comprar</a>
+        }
+
+    </div>
+}
+

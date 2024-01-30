@@ -1,0 +1,78 @@
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.AssemblyInfoInputs.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.AssemblyInfo.cs
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.CoreCompileInputs.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.RazorAssemblyInfo.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.RazorAssemblyInfo.cs
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\appsettings.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.staticwebassets.runtime.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.exe
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.deps.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.runtimeconfig.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.pdb
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.BetterFindsProject.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.build.BetterFindsProject.props
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BetterFindsProject.props
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BetterFindsProject.props
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\bundle\BetterFindsProject.styles.css
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\projectbundle\BetterFindsProject.bundle.scp.css
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\refint\BetterFindsProject.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.pdb
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.genruntimeconfig.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\ref\BetterFindsProject.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.AssemblyReference.cache
+C:\Users\marga\source\repos\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.CopyComplete
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\appsettings.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.staticwebassets.runtime.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.exe
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.deps.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.runtimeconfig.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\BetterFindsProject.pdb
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.AssemblyReference.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.AssemblyInfoInputs.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.AssemblyInfo.cs
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.CoreCompileInputs.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.RazorAssemblyInfo.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.RazorAssemblyInfo.cs
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.sourcelink.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.BetterFindsProject.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.build.BetterFindsProject.props
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BetterFindsProject.props
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BetterFindsProject.props
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\bundle\BetterFindsProject.styles.css
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\scopedcss\projectbundle\BetterFindsProject.bundle.scp.css
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.csproj.CopyComplete
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\refint\BetterFindsProject.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.pdb
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\BetterFindsProject.genruntimeconfig.cache
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\obj\Debug\net8.0\ref\BetterFindsProject.dll
+C:\Users\marga\OneDrive\Ambiente de Trabalho\Engenharia Informática\3ºAno\LI4\LI4\BetterFindsProject\BetterFindsProject\bin\Debug\net8.0\Dapper.dll

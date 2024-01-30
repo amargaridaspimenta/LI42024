@@ -1,0 +1,96 @@
+﻿@page
+@model BetterFindsProject.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Exibe estilo para botões e página -->
+<style>
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+
+    .red-info {
+        color: red; 
+        display: inline; 
+        margin-left: 5px; 
+    }
+
+    .small {
+        font-size: 12px;
+        margin-top: 5px; 
+    }
+
+</style>
+
+<form method="post">
+    <div class="form-group">
+        <label for="inputEmail">Email:</label> <!-- Caixa para inserir email -->
+        <input type="text" class="form-control" id="inputEmail" name="Email" placeholder="Insira o seu endereço de email" required>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password:</label> <!-- Caixa para inserir password -->
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Insira uma password" required>
+
+        <!-- Indica que palavra passe está errada -->
+        @if (Model.checkEmailLogin)
+        {
+            <p class="small red-info">* Palavra-passe errada. Insira novamente.</p>
+        }
+    </div>
+    <button type="submit" class="btn btn-success transparent-btn">Login</button> <!-- Botão de login -->
+</form>

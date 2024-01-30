@@ -1,0 +1,108 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Politicas de Privacidade.";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!-- Exibe estilo para botões e página -->
+<style>
+    .green-rectangle {
+        background-color: transparent;
+        color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    f {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    span {
+        color: transparent;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 1.0; 
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+
+    .brand {
+        font-weight: bold;
+        color: #ff9900; 
+    }
+</style>
+
+<!-- Exibe texto da página -->
+<p style="font-size: 25px;">Bem-vindo à <span class="brand" style="font-size: 30px;">BetterFinds</span>!</p>
+
+<p>
+    A sua privacidade é de extrema importância para nós.
+    Nossa Política de Privacidade explica como coletamos, usamos,
+    compartilhamos e protegemos suas informações pessoais ao utilizar nossos serviços.
+    Ao acessar nosso site, você concorda com os termos desta política.
+</p>
+<body>
+    <div class="green-rectangle">
+            <strong>Informações Pessoais:</strong><br>
+            Coletamos informações pessoais apenas com o seu consentimento explícito. Estas podem incluir, mas não se limitam a, nome, endereço de e-mail e informações relacionadas ao leilão.
+    </div>
+
+    <div class="green-rectangle">
+            <strong>Segurança: </strong><br>
+            Implementamos medidas rigorosas de segurança para proteger suas informações contra acesso não autorizado. No entanto, lembre-se de que a segurança total na internet não pode ser garantida.
+    </div>
+
+    <div class="green-rectangle">
+            <strong>Links Externos:</strong><br>
+            Nosso site pode conter links para outros sites. Não somos responsáveis pelas práticas de privacidade desses sites. Recomendamos revisar as políticas de privacidade de cada site visitado.
+    </div>
+</body>

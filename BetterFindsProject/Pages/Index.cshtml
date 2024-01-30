@@ -1,0 +1,89 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+@inject IHtmlHelper Html
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Estilo de página -->
+    <style>
+        body {
+            position: relative;
+            color: #ffffff;
+            font-family: "Roboto", sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+
+            body::before {
+                content: "";
+                background-image: url('@Url.Content("~/vintage.jpg")');
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+
+            body::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.6); /* Cor de sobreposição com opacidade */
+                z-index: -1;
+            }
+
+        .container {
+            padding: 20px;
+        }
+
+        .hero-title, .hero-subtitle, .text-center {
+            text-align: center;
+        }
+
+        .transparent-btn {
+            background-color: transparent;
+            border: 2px solid #ffffff; 
+            color: #ffffff; 
+        }
+
+        .transparent-btn:hover {
+             background-color: #ffffff;
+             color: #000000; 
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Texto de página -->
+    <div class="container" style="margin-top: 20vh;">
+        <h1 class="hero-title display-4 text-center">BetterFinds</h1>
+
+        <p class="hero-subtitle text-center" style="font-size: 1.5em;">
+            <span style="font-weight: bold; font-style: italic;">Find</span>
+            something
+            <span style="font-weight: bold; font-style: italic;">Better</span>.
+            Find something unique.
+        </p>
+    </div>
+</body>
+
+
+</html>
+
+
+

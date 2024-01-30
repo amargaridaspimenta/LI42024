@@ -1,0 +1,178 @@
+﻿@page
+@model BetterFindsProject.Pages.RegistoModel
+@{
+    ViewData["Title"] = "Registo";
+}
+
+<!-- Exibe estilo para botões e página -->
+<h1>@ViewData["Title"]</h1>
+
+<style>
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* opacidade */
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    .green-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .small {
+        font-size: 12px; 
+        margin-top: 5px; 
+    }
+
+    .big {
+        font-size: 19px; 
+        margin-top: 5px; 
+    }
+
+    .custom-link {
+        color: white; 
+    }
+
+        .custom-link:hover {
+            color: #005500; 
+        }
+
+    a.custom-link {
+        position: fixed;
+        top: 50%;
+        right: 35%;
+        transform: translate(-50%, -50%);
+    }
+
+    .red-info {
+        color: red; 
+        display: inline; 
+        margin-left: 5px; 
+    }
+
+    .mismatch-info {
+        color: red;
+        display: none;
+        margin-top: 5px;
+    }
+</style>
+
+<!-- Script para verificar se palavras passe são coincidentes -->
+<script>
+    function checkPasswordMatch() {
+        var password = document.getElementById('Password').value;
+        var confirmPassword = document.getElementById('ConfirmPassword').value;
+        var mismatchInfo = document.getElementById('mismatchInfo');
+
+        if (password !== confirmPassword) {
+            mismatchInfo.style.display = 'inline';
+        } else {
+            mismatchInfo.style.display = 'none';
+        }
+    }
+</script>
+
+<form method="post" onsubmit="checkPasswordMatch();">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+    <div class="form-group">
+        <label for="inputUsername">Username:</label> <!-- Caixa para inserir o username -->
+        <input type="text" class="form-control" id="inputUsername" name="Username" placeholder="Insira um username" required>
+        @if (Model.checkUsername)
+        {
+            <p class="small red-info">* Username escolhido em uso</p> <!-- Mensagem de Username escolhido em uso -->
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="inputEmail">Email:</label> <!-- Caixa para inserir o email -->
+        <input type="text" class="form-control" id="inputEmail" name="Email" placeholder="Insira o seu email" required>
+        @if (Model.checkEmail)
+        {
+            <p class="small red-info">* Email já registado</p> <!-- Mensagem de Email já registado -->
+            <p style="position: fixed; top: 47%; right: 24.5%; transform: translate(-50%, -50%);font-size: 19px;">O email já se encontra registado.</p>
+            <a class="btn btn-link big custom-link" href="/Login">Fazer login</a>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password:</label> <!-- Caixa para inserir password -->
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Insira uma senha" required>
+        <p class="small red-info">* Mínimo de 8 caracteres</p>
+    </div>
+    <div class="form-group">
+        <label for="ConfirmPassword">Confirmar Password:</label> <!-- Caixa para confirmar password -->
+        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Insira a password novamente" required oninput="checkPasswordMatch();">
+        <p id="mismatchInfo" class="small mismatch-info">*As senhas não coincidem</p>
+    </div>
+    <div class="form-group">
+        <label for="FullName">Nome Completo:</label> <!-- Caixa para inserir nome completo -->
+        <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Insira o seu nome" required>
+    </div>
+    <button type="submit" class="btn btn-success transparent-btn">Registar</button> <!-- Botão para registar -->
+</form>
+
+

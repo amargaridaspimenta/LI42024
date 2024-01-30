@@ -1,0 +1,210 @@
+﻿@page
+@model BetterFindsProject.Pages.PerfilModel
+@{
+    ViewData["Title"] = "Página Pessoal";
+}
+
+<!-- Exibe estilo para botões e página -->
+<style>
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    .auction {
+        border: 2px solid #ffffff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .auction-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .auction-details {
+        margin-top: 10px;
+    }
+
+    .bid-section {
+        margin-top: 10px;
+    }
+
+    .bid-input {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    .bid-button {
+        padding: 5px 10px;
+        background-color: #008000;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 100;
+    }
+
+</style>
+
+<header>
+    <h1>Perfil</h1>
+</header>
+
+<!-- Se o cliente estiver autenticado exibe as suas informações (username, name, email) -->
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="row justify-content-center">
+        <div class="col-md-6" style="margin-left: -560px;">
+            <div class="profile-info" style="top: 0px;">
+                <h2>Informações do Cliente</h2>
+
+                <img src="~/profile.jpg" width="110px" height="110px" style="float: left; margin-left: -40px;">
+
+                <p><strong>Username:</strong> @Model.Cliente.UserName</p>
+                <p><strong>Name:</strong> @Model.Cliente.FullName</p>
+                <p><strong>Email:</strong> @Model.Cliente.Email</p>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>Cliente não encontrado.</p>
+}
+
+<!-- Itera sobre os leilões que este criou e exibe as suas informações, exibindo um botão de remover leilão -->
+@if (Model.Auctions != null)
+{
+    @foreach (var auction in Model.Auctions)
+    {
+        <div class="auction">
+            <div class="auction-title">@auction.Name</div>
+            <div class="auction-details">
+                <div>Licitação Mínima: @auction.MinimumBid€</div>
+                <div>Licitação Atual: @auction.Price€</div>
+                <div>Descrição: @auction.Description</div>
+                <div>
+                    <span class="countdown-label">Tempo Restante do Leilão: </span>
+                    <span id="countdown-@auction.AuctionId" data-auction-time="@auction.AuctionTime"></span>
+                    <button id="remove-auction-btn-@auction.AuctionId" class="btn btn-success transparent-btn">Remover Leilão</button>
+                </div>
+            </div>
+            <div class="bid-section">
+            </div>
+        </div>
+    }
+}
+
+<!-- Script para o countdown dos leilões -->
+@section scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var countdownElements = document.querySelectorAll('[id^="countdown-"]');
+
+            countdownElements.forEach(function (countdownElement) {
+                var auctionId = countdownElement.id.split("-")[1];
+                var storedTime = localStorage.getItem(`countdown-${auctionId}`);
+                var isAuctionRemoved = localStorage.getItem(`removed-auction-${auctionId}`) === "true";
+
+                if (isAuctionRemoved) {
+                    countdownElement.parentNode.parentNode.style.display = 'none';
+                    return;
+                }
+
+                var auctionTime = parseInt(countdownElement.getAttribute('data-auction-time'));
+                var time = storedTime !== null ? parseInt(storedTime) : auctionTime * 3600;
+
+                var removeAuctionBtn = document.getElementById(`remove-auction-btn-${auctionId}`);
+
+                var intervalId = setInterval(function () {
+                    const hours = Math.floor(time / 3600);
+                    const minutes = Math.floor((time % 3600) / 60);
+                    let seconds = time % 60;
+
+                    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                    countdownElement.innerHTML = `${hours}:${minutes}:${seconds}`;
+
+                    if (time === 0) {
+                        removeAuctionBtn.style.display = 'block';
+                        clearInterval(intervalId);
+                    } else {
+                        time--;
+                        localStorage.setItem(`countdown-${auctionId}`, time.toString());
+                    }
+                }, 1000);
+
+                removeAuctionBtn.addEventListener('click', function () {
+                    console.log('Leilão removido:', auctionId);
+                    localStorage.setItem(`removed-auction-${auctionId}`, "true");
+                    countdownElement.parentNode.parentNode.style.display = 'none';
+                    clearInterval(intervalId);
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+

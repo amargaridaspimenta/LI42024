@@ -1,0 +1,115 @@
+﻿@page
+@model BetterFindsProject.Pages.CreateAuctionModel
+@{
+    ViewData["Title"] = "Crie um leilão";
+}
+
+<!-- Estilo para botão e página -->
+<style>
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-title, .hero-subtitle, .text-center {
+        text-align: center;
+    }
+
+    .transparent-btn {
+        background-color: transparent;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .transparent-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="auction-form">
+    <form method="post">
+
+        <div class="form-group">
+            <label for="productImage">Imagem do Produto:</label> <!-- Caixa para escolher imagem -->
+            <input type="file" class="form-control-file" id="productImage" name="productImage" onchange="previewImage()">
+        </div>
+
+        <div class="form-group">
+            <label for="Name">Nome do Produto:</label> <!-- Caixa para inserir nome do produto -->
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Insira o nome do produto" required>
+
+            <!-- Texto de página -->
+            <p class="text-center" style="position: absolute; top: 43%; left: 57%; transform: translate(-50%, -50%); z-index: 1;">Temos uma ampla variedade de itens para escolher, incluindo:</p>
+
+            <ul class="text-center" style="position: absolute; top: 55%; left: 57%; transform: translate(-50%, -50%); z-index: 1; list-style-type: none;">
+                <li><strong>Antiguidades</strong></li>
+                <li><strong>Colecionáveis</strong></li>
+                <li><strong>Objetos de arte</strong></li>
+                <li><strong>Móveis vintage</strong></li>
+                <li><strong>Outros</strong></li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label for="Price">Preço Inicial:</label> <!-- Caixa para inserir preço inicial -->
+            <input type="number" class="form-control" id="Price" name="Price" placeholder="Insira o preço inicial - €" required>
+        </div>
+
+        <div class="form-group">
+            <label for="MinimumBid">Licitação Mínima:</label> <!-- Caixa para inserir licitação miníma -->
+            <input type="number" class="form-control" id="MinimumBid" name="MinimumBid" placeholder="Insira a licitação mínima - €" required>
+        </div>
+
+        <div class="form-group">
+            <label for="AuctionTime">Tempo do Leilão:</label> <!-- Caixa para inserir tempo do leilão em horas -->
+            <input type="text" class="form-control" id="AuctionTime" name="AuctionTime" placeholder="Insira o tempo do leilão - Horas" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Descrição do Produto:</label> <!-- Caixa para inserir descrição do produto -->
+            <input class="form-control" id="Description" name="Description" placeholder="Insira a descrição do produto" required>
+        </div>
+
+        <button type="submit" class="btn btn-success transparent-btn">Registar Leilão</button> <!-- Botão para registar -->
+    </form>
+</div>

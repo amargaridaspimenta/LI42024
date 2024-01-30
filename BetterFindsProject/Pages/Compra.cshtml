@@ -1,0 +1,242 @@
+﻿@page
+@model BetterFindsProject.Pages.CompraModel
+@{
+    ViewData["Title"] = "Pagamento";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<head>
+    <title>Página de Pagamento</title>
+</head>
+
+<!-- Estilos para botões e página -->
+<style>
+    .navbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 100;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .inputBox {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+        .inputBox label {
+            margin-bottom: 5px;
+        }
+
+        .inputBox input {
+            padding: 5px;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 315px;
+    }
+
+    .col {
+        margin-right: 70px;
+    }
+
+    body {
+        position: relative;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100vh;
+        margin: 0;
+    }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+    .green-btn {
+        background-color: darkolivegreen;
+        border: 2px solid #ffffff; 
+        color: #ffffff; 
+    }
+
+        .green-btn:hover {
+            background-color: #ffffff;
+            color: #000000; 
+        }
+
+</style>
+
+<body>
+    <div class="container">
+
+        <form method="post">
+
+            <div class="row">
+
+                <div class="col">
+                    <h3 class="title">
+                        Dados de Envio
+                    </h3>
+
+                    <div class="inputBox">
+                        <label for="FullName"> 
+                            Nome Completo:
+                        </label>
+                        <input type="text" id="FullName"
+                               name="FullName"
+                               placeholder="Insira o seu nome completo" <!-- Caixa para inserir nome -->
+                               required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="Email">
+                            Email:
+                        </label>
+                        <input type="text" id="Email"
+                               name="Email"
+                               placeholder="Insira o seu email" <!-- Caixa para inserir email -->
+                               required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="City">
+                            Cidade:
+                        </label>
+                        <input type="text" id="City"
+                               name="City"
+                               placeholder="Insira a sua cidade" <!-- Caixa para inserir cidade -->
+                               required>
+                    </div>
+
+                    <div class="flex">
+
+                        <div class="inputBox">
+                            <label for="District">
+                                Distrito:
+                            </label>
+                            <input type="text" id="District"
+                                   name="District"
+                                   placeholder="Insira o seu distrito" <!-- Caixa para inserir distrito -->
+                                   required>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="Code">
+                                Código-Postal:
+                            </label>
+                            <input type="number" id="Code" 
+                                   name="Code"
+                                   placeholder="XXXXxxx" <!-- Caixa para inserir código-postal -->
+                                   required>
+                        </div>
+                        <input type="submit" value="Pagar" class="btn btn-success green-btn" action="/Compra"> <!-- Botão de compra -->
+                    </div>
+
+                </div>
+                <div class="col">
+                    <h3 class="title">Dados de Pagmento</h3>
+
+                    <div class="inputBox">
+                        <label for="name">
+                            Aceitamos:
+                        </label>
+                        <img src="pagamento.png" alt="credit/debit card image" style="width: 170px;"> <!-- Imagem métodos de pagamento -->
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="CardName">
+                            Nome do Cartão:
+                        </label>
+                        <input type="text" id="CardName"
+                               name="CardName"
+                               placeholder="Insira o nome do cartão" <!-- Caixa para inserir nome do cartão -->
+                               required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="CardNumber">
+                            Número do Cartão:
+                        </label>
+                        <input type="text" id="CardNumber"
+                               name="CardNumber"
+                               placeholder="Insira o número do Cartão" <!-- Caixa para inserir número do cartão -->
+                               maxlength="19" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="MontExp">Validade - Mês:</label> <!-- Caixa para escolher mês -->
+                        <select name="MonthExp" id="MontExp">
+                            <option value="">Escolha o mês</option>
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </div>
+
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="YearExp">Validade - Ano:</label> <!-- Caixa para escolher ano -->
+                            <select name="YearExp" id="YearExp">
+                                <option value="">Escolha o ano</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="CvvNumber">CVV</label>
+                            <input type="number" id="CvvNumber"
+                                   name="CvvNumber"
+                                   placeholder="123" required> <!-- Caixa para inserir Cvv -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </form>
+
+    </div>
+</body>

@@ -1,0 +1,134 @@
+﻿@page
+@model BetterFindsProject.Pages.NotificacaoModel
+@{
+    ViewData["Title"] = "Página de Exemplo";
+}
+
+<!-- Exibe estilo para botões e página -->
+<head>
+    <title>Notificações</title>
+    <style>
+        .custom-white {
+            color: #ffffff; 
+        }
+
+        .custom-bold {
+            font-weight: bold; 
+        }
+
+        .custom-large {
+            font-size: 24px; 
+        }
+
+        .custom-rounded {
+            border-radius: 10px; 
+        }
+
+        .green-btn {
+            background-color: darkolivegreen;
+            border: 2px solid #ffffff; 
+            color: #ffffff; 
+        }
+
+            .green-btn:hover {
+                background-color: darkolivegreen;
+                color: #000000; 
+            }
+
+        body {
+            margin: 25px;
+        }
+
+        body::before {
+            content: "";
+            background-image: url('@Url.Content("~/vintage.jpg")');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .notifications-box {
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+            .notifications-box h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+        .notification {
+            margin-bottom: 10px;
+        }
+
+            .notification .icon {
+                margin-right: 10px;
+            }
+
+            .notification a {
+                color: white; 
+                text-decoration: none; 
+            }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="notifications-box">
+            <h1>Notificações</h1>
+
+            <!-- Verifica se o cliente está logado e se estiver envia notificação de boas vindas -->
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="notification">
+                    <span class="text">
+                        . Bem-vindo ao BetterFinds! Lembre-se, connosco encontra sempre algo melhor.
+                    </span>
+                </div>
+            }
+
+            <!-- Verifica se o cliente é vencedor do leilão e se for envia notificação de vencedor -->
+            @if (Model.IsWinnerNotification)
+            {
+                <div class="notification">
+                    <span class="text">
+                        . Parabéns! Você é o vencedor do leilão!
+                    </span>
+                    <a href="/Compra" class="btn green-btn">Pagamento</a>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
